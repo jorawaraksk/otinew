@@ -5,6 +5,7 @@ psutil
 telethon
 html_telegraph_poster
 lxml[html_clean]
+lxml_html_clean
 pymediainfo
 tgcrypto
 https://github.com/New-dev0/Telethon/archive/diamond.zip
