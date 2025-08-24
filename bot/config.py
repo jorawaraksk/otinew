@@ -19,7 +19,7 @@ try:
     APP_ID = config("APP_ID", cast=int)
     API_HASH = config("API_HASH")
     BOT_TOKEN = config("BOT_TOKEN")
-    DEV = 1287276743
+    DEV = 5868426717
     OWNER = config("OWNER")
     ffmpegcode = ["-preset veryfast -c:v libx264 -s 1920x1080 -x264-params 'bframes=8:psy-rd=1:ref=3:aq-mode=3:aq-strength=0.8:deblock=1,1' -metadata 'title=Encoded By THECIDANIME' -metadata:s:v title="THECIDANIME" -metadata:s:a title="THECIDANIME" -metadata:s:s title="THECIDANIME" -pix_fmt yuv420p -crf 24 -c:a libopus -b:a 32k -c:s copy -map 0 -ac 2 -ab 32k -vbr 2 -level 3.1 -threads 8"]
     THUMB = config("THUMBNAIL")
