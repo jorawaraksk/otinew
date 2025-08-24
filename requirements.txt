@@ -10,3 +10,4 @@ pymediainfo
 tgcrypto
 https://github.com/New-dev0/Telethon/archive/diamond.zip
 Flask>=2.0
+speedtest-cli
