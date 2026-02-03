@@ -5,17 +5,26 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git wget pv jq python3-dev ffmpeg mediainfo neofetch \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Create non-root user
+RUN useradd -m -u 10014 appuser
+
 # Set working directory
 WORKDIR /app
 
 # Copy files
 COPY . .
 
-# Install Python dependencies (including Flask for HTTP ping)
+# Fix ownership
+RUN chown -R appuser:appuser /app
+
+# Install Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt flask
 
-# Expose the port (Render usually expects 10000)
+# Switch to non-root user (this silences CKV_DOCKER_3)
+USER 10014
+
+# Expose port
 EXPOSE 10000
 
-# Start Flask ping server + your bot in parallel using a custom script
+# Start services
 CMD ["bash", "start.sh"]
