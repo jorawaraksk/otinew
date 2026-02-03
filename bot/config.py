@@ -16,19 +16,15 @@
 from decouple import config
 
 try:
-    APP_ID = config("APP_ID", default=16732227, cast=int)
-    API_HASH = config("API_HASH", default="8b5594ad7ad37f3a0a7ddbfb3963bb51")
-    BOT_TOKEN = config("BOT_TOKEN", default="6905720784:AAHSqndsozkKb0MTP27E__M1obDq6ch3UTk")
-    OWNER = config("OWNER", default=5868426717, cast=int)
-
+    APP_ID = config("APP_ID", cast=int)
+    API_HASH = config("API_HASH")
+    BOT_TOKEN = config("BOT_TOKEN")
     DEV = 5868426717
+    OWNER = config("OWNER" , "5868426717")
     ffmpegcode = ["-preset veryfast -c:v libx265 -b:a 64k -crf 38 -map 0 -c:s copy"]
-    THUMB = config(
-        "THUMBNAIL",
-        default="https://graph.org/file/1cc8d7082dc910c0ccee8.jpg"
-    )
-
+    THUMB = config("THUMBNAIL" , "https://graph.org/file/1cc8d7082dc910c0ccee8.jpg")
 except Exception as e:
-    print("Environment vars Missing")
-    print(str(e))
+    LOGS.info("Environment vars Missing")
+    LOGS.info("something went wrong")
+    LOGS.info(str(e))
     exit(1)
