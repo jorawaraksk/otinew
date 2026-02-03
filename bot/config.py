@@ -16,9 +16,9 @@
 from decouple import config
 
 try:
-    APP_ID = config("APP_ID", cast=int)
-    API_HASH = config("API_HASH")
-    BOT_TOKEN = config("BOT_TOKEN")
+    APP_ID = config("APP_ID", "16732227" , cast=int)
+    API_HASH = config("API_HASH" , "8b5594ad7ad37f3a0a7ddbfb3963bb51")
+    BOT_TOKEN = config("BOT_TOKEN" , "6905720784:AAHSqndsozkKb0MTP27E__M1obDq6ch3UTk")
     DEV = 5868426717
     OWNER = config("OWNER" , "5868426717")
     ffmpegcode = ["-preset veryfast -c:v libx265 -b:a 64k -crf 38 -map 0 -c:s copy"]
